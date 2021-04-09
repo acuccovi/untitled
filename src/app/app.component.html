@@ -3,6 +3,10 @@
   <title></title>
 </head>
 <body>
-  <p>[verrà sovrascritto]</p>
+<h3 [textContent]="slideshow.title"></h3>
+<h4>by <span [textContent]="slideshow.author"></span> on <span [textContent]="slideshow.date"></span></h4>
+<ul *ngFor="let slide of slideshow.slides">
+  <li>Title: <span [textContent]="slide.title"></span></li>
+</ul>
 </body>
 </html>
