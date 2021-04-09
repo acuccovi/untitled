@@ -6,7 +6,13 @@
 <h3 [textContent]="slideshow.title"></h3>
 <h4>by <span [textContent]="slideshow.author"></span> on <span [textContent]="slideshow.date"></span></h4>
 <ul *ngFor="let slide of slideshow.slides">
-  <li>Title: <span [textContent]="slide.title"></span></li>
+  <li>Title: <span [textContent]="slide.title"></span>
+    <span *ngIf="slide.items">
+    <ul *ngFor="let item of slide.items">
+      <li [innerHTML]="item"></li>
+    </ul>
+    </span>
+  </li>
 </ul>
 </body>
 </html>
